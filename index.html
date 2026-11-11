@@ -1,129 +1,657 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vaibhav Kumar — Senior Software Engineer specializing in Java, Spring Boot, Kotlin, Angular and microservices." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vaibhav Kumar - Senior Software Engineer specializing in Java, Spring Boot, Kotlin, Angular and Microservices.">
   <title>Vaibhav Kumar | Senior Software Engineer</title>
+
   <style>
-    :root{--bg:#0b1020;--panel:#121a2e;--panel2:#17223a;--text:#edf2ff;--muted:#a9b5ce;--blue:#78a9ff;--cyan:#66e0d0;--line:rgba(255,255,255,.1)}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 85% 5%,#1b3155 0,transparent 28%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-    a{color:inherit;text-decoration:none}.wrap{width:min(1080px,90%);margin:auto}
-    header{position:sticky;top:0;z-index:5;background:rgba(11,16,32,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.3px}.brand span{color:var(--cyan)}
-    .navlinks{display:flex;gap:24px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--text)}
-    .hero{padding:100px 0 76px;display:grid;grid-template-columns:1.4fr .8fr;gap:48px;align-items:center}
-    .eyebrow{color:var(--cyan);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
-    h1{font-size:clamp(42px,6vw,68px);line-height:1.08;letter-spacing:-2px;margin:18px 0}
-    h1 span{color:var(--blue)}.lead{font-size:19px;color:var(--muted);max-width:650px}
-    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.btn{padding:12px 19px;border-radius:9px;font-weight:700;font-size:14px;border:1px solid var(--line)}
-    .primary{background:linear-gradient(120deg,#6f9fff,#65d9d0);color:#07111e;border:0}.btn:hover{transform:translateY(-2px)}
-    .hero-card,.card{background:linear-gradient(145deg,rgba(23,34,58,.95),rgba(16,24,42,.95));border:1px solid var(--line);border-radius:18px;padding:25px}
-    .hero-card{box-shadow:0 25px 70px rgba(0,0,0,.25)}.hero-card h3{margin:0 0 16px}.stat{padding:13px 0;border-bottom:1px solid var(--line)}.stat:last-child{border:0}.stat strong{display:block;font-size:20px}.stat small{color:var(--muted)}
-    section{padding:64px 0}.section-head{margin-bottom:28px}.section-head h2{font-size:32px;letter-spacing:-.8px;margin:0 0 8px}.section-head p{color:var(--muted);margin:0}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card h3{margin:0 0 8px}.card p{color:var(--muted);margin:0}.taglist{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
-    .tag{font-size:12px;color:#d7e5ff;background:rgba(120,169,255,.12);border:1px solid rgba(120,169,255,.22);padding:6px 10px;border-radius:999px}
-    .timeline{display:grid;gap:18px}.role{display:grid;grid-template-columns:190px 1fr;gap:24px}.date{color:var(--cyan);font-size:13px;font-weight:700}.role h3{margin:0}.role .company{color:var(--muted);margin:2px 0 10px}.role ul{margin:0;padding-left:18px;color:var(--muted)}
-    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.skill{padding:18px;border-radius:12px;background:var(--panel);border:1px solid var(--line)}.skill h3{font-size:15px;margin:0 0 7px}.skill p{font-size:14px;color:var(--muted);margin:0}
-    .contact{display:flex;justify-content:space-between;gap:30px;align-items:center;background:linear-gradient(120deg,rgba(66,113,190,.22),rgba(65,190,176,.12));border:1px solid var(--line);border-radius:20px;padding:32px}
-    .contact h2{margin:0 0 6px}.contact p{color:var(--muted);margin:0}.contact-links{display:flex;gap:10px;flex-wrap:wrap}
-    footer{padding:30px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:60px}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:70px 0 45px}.navlinks{gap:12px}.navlinks a:nth-child(2),.navlinks a:nth-child(3){display:none}.grid,.skills{grid-template-columns:1fr}.role{grid-template-columns:1fr;gap:4px}.contact{display:block}.contact-links{margin-top:20px}}
+    :root {
+      --primary: #2563eb;
+      --dark: #10213d;
+      --text: #475569;
+      --light: #f5f8ff;
+      --white: #ffffff;
+      --border: #e5eaf3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--dark);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #eff6ff, #ffffff 70%);
+      padding: 105px 0 95px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    h1 {
+      color: var(--dark);
+      font-size: clamp(40px, 7vw, 66px);
+      line-height: 1.12;
+      margin: 18px 0;
+    }
+
+    h1 span {
+      color: var(--primary);
+    }
+
+    .hero h2 {
+      color: #334155;
+      font-size: clamp(19px, 3vw, 25px);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: #eff6ff;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-title {
+      color: var(--dark);
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      margin-bottom: 35px;
+      max-width: 700px;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .stat {
+      padding: 22px;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--primary);
+      font-size: 27px;
+    }
+
+    .stat span {
+      font-size: 14px;
+    }
+
+    .skills, .projects {
+      background: var(--light);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 24px;
+      box-shadow: 0 5px 18px rgba(15, 35, 70, .035);
+    }
+
+    .card h3 {
+      color: var(--dark);
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+    }
+
+    .experience-item {
+      border-left: 3px solid var(--primary);
+      padding: 5px 0 28px 25px;
+      margin-left: 8px;
+      position: relative;
+    }
+
+    .experience-item::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 8px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .experience-item h3 {
+      color: var(--dark);
+      font-size: 21px;
+    }
+
+    .company {
+      color: var(--primary);
+      font-weight: 700;
+      margin: 4px 0;
+    }
+
+    .date {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    ul.details {
+      padding-left: 20px;
+    }
+
+    ul.details li {
+      margin: 7px 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .tag {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .achievements {
+      background: white;
+    }
+
+    .contact {
+      background: var(--dark);
+      color: #dbeafe;
+      text-align: center;
+    }
+
+    .contact .section-title {
+      color: white;
+    }
+
+    .contact .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 25px;
+      color: white;
+      font-weight: 600;
+    }
+
+    .contact-links a:hover {
+      color: #93c5fd;
+    }
+
+    footer {
+      background: #0b172b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .grid, .stats {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .section-title {
+        font-size: 27px;
+      }
+    }
   </style>
 </head>
+
 <body>
-<header><div class="wrap"><nav>
-  <a class="brand" href="#home">VAIBHAV<span>.</span></a>
-  <div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
-</nav></div></header>
+
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">Vaibhav<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
 <main>
-  <div class="wrap">
-    <section class="hero" id="home">
-      <div>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
         <div class="eyebrow">Senior Software Engineer · India</div>
-        <h1>Building reliable<br><span>backend systems</span><br>and web products.</h1>
-        <p class="lead">I'm Vaibhav Kumar, a software engineer with 5+ years of experience building scalable applications using Java, Spring Boot, Kotlin, Angular and microservices.</p>
-        <div class="actions">
-          <a class="btn primary" href="#contact">Get in touch</a>
-          <a class="btn" href="#experience">View experience</a>
-          <!-- Add your resume PDF and replace # with its hosted URL. -->
-          <a class="btn" href="#contact" aria-label="Resume available on request">Resume available on request</a>
+        <h1>Hi, I'm <span>Vaibhav Kumar</span></h1>
+        <h2>Java Full Stack Developer | Spring Boot | Microservices</h2>
+        <p>
+          I have 5+ years of experience building scalable, secure and
+          high-performance applications across healthcare, insurance and
+          e-commerce domains. I enjoy solving complex engineering problems
+          and building reliable software products.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#contact">Let's Connect</a>
+          <a class="btn btn-outline"
+             href="Vaibhav_Kumar_Java_Full_Stack_Resume_1.pdf"
+             target="_blank" rel="noopener">
+            Download Resume ↓
+          </a>
         </div>
       </div>
-      <aside class="hero-card">
-        <h3>At a glance</h3>
-        <div class="stat"><strong>5+ years</strong><small>Software engineering experience</small></div>
-        <div class="stat"><strong>Java · Spring Boot</strong><small>Core backend expertise</small></div>
-        <div class="stat"><strong>Full-stack</strong><small>Backend services and Angular applications</small></div>
-        <div class="stat"><strong>Microservices</strong><small>APIs, integrations, messaging and data</small></div>
-      </aside>
-    </section>
+    </div>
+  </section>
 
-    <section id="about">
-      <div class="section-head"><h2>About me</h2><p>Practical engineering, clean code and dependable systems.</p></div>
-      <div class="card">
-        <p>I am a Senior Software Engineer focused on designing and developing backend services and full-stack applications. My experience includes REST API development, microservices, database integration, event-driven systems and modern web applications. I enjoy solving complex problems, collaborating with cross-functional teams and continuously improving system quality, performance and maintainability.</p>
-        <div class="taglist"><span class="tag">Backend Engineering</span><span class="tag">REST API Design</span><span class="tag">Microservices</span><span class="tag">Event-driven Systems</span><span class="tag">Full-stack Development</span></div>
-      </div>
-    </section>
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        I'm a software engineer focused on backend and full-stack
+        development. My experience includes designing REST APIs,
+        developing microservices, integrating enterprise authentication,
+        improving database performance and delivering production-ready
+        applications.
+      </p>
 
-    <section id="skills">
-      <div class="section-head"><h2>Technical skills</h2><p>Technologies and tools I have worked with.</p></div>
-      <div class="skills">
-        <div class="skill"><h3>Languages</h3><p>Java 8/17, Kotlin, SQL, TypeScript</p></div>
-        <div class="skill"><h3>Backend</h3><p>Spring Boot, Spring WebFlux, REST APIs, Hibernate/JPA, Microservices</p></div>
-        <div class="skill"><h3>Frontend</h3><p>Angular, Angular 17/18, HTML, CSS</p></div>
-        <div class="skill"><h3>Data & Messaging</h3><p>MySQL, PostgreSQL, Cassandra, Kafka, Redis, Elasticsearch</p></div>
-        <div class="skill"><h3>Cloud & DevOps</h3><p>AWS, Docker, CI/CD, Git, Liquibase</p></div>
-        <div class="skill"><h3>Quality & Tools</h3><p>JUnit, Mockito, MockK, SonarQube, New Relic, Postman</p></div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="section-head"><h2>Experience</h2><p>Professional journey.</p></div>
-      <div class="timeline">
-        <div class="card role">
-          <div class="date">Jan 2024 — Present</div>
-          <div><h3>Senior Software Engineer</h3><div class="company">Personify Health</div>
-            <ul><li>Develop and maintain services within a large-scale healthcare and benefits technology platform.</li><li>Work across Java/Kotlin, Spring-based services, Angular applications, APIs and database integrations.</li><li>Collaborate with product, QA and platform teams to deliver reliable features and production improvements.</li></ul>
-          </div>
+      <div class="stats">
+        <div class="stat">
+          <strong>5+</strong>
+          <span>Years of Experience</span>
         </div>
-        <div class="card role">
-          <div class="date">Sep 2021 — Jan 2024</div>
-          <div><h3>Software Engineer</h3><div class="company">Mogli Labs Pvt. Ltd. · Moglix</div>
-            <ul><li>Worked on ecommerce platform capabilities involving shopping, payments and order management.</li><li>Built and maintained backend functionality using Java, Spring Boot, REST APIs and relational databases.</li><li>Collaborated with the team to improve application functionality and maintainable service integrations.</li></ul>
-          </div>
+        <div class="stat">
+          <strong>2</strong>
+          <span>Professional Organizations</span>
+        </div>
+        <div class="stat">
+          <strong>30%</strong>
+          <span>Database Response Time Improvement</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects">
-      <div class="section-head"><h2>Selected work</h2><p>Representative domains from my professional experience. Details are intentionally kept high-level.</p></div>
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <p class="section-subtitle">
+        Technologies and tools I use to design, develop and deliver software.
+      </p>
+
       <div class="grid">
-        <article class="card"><h3>Healthcare & Benefits Platform</h3><p>Enterprise platform engineering across member-facing and administrative workflows, backend APIs, integrations and web applications.</p><div class="taglist"><span class="tag">Java</span><span class="tag">Kotlin</span><span class="tag">Spring Boot</span><span class="tag">Angular</span><span class="tag">Microservices</span></div></article>
-        <article class="card"><h3>Ecommerce & Order Management</h3><p>Backend development for ecommerce workflows spanning shopping, payments and order management capabilities.</p><div class="taglist"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">REST APIs</span><span class="tag">SQL</span></div></article>
-      </div>
-    </section>
+        <div class="card">
+          <h3>Backend Development</h3>
+          <p>Java, Kotlin, Spring Boot, Spring Framework, Microservices,
+            REST APIs, Hibernate, JPA, Design Patterns</p>
+        </div>
 
-    <section id="education">
-      <div class="section-head"><h2>Education</h2></div>
-      <div class="card"><h3>Bachelor of Technology — Computer Science</h3><p>UIET, Kurukshetra University · 2021 · CGPA: 7.8</p></div>
-    </section>
+        <div class="card">
+          <h3>Frontend Development</h3>
+          <p>Angular, React.js, TypeScript, JavaScript ES6+,
+            HTML5, CSS3</p>
+        </div>
 
-    <section id="contact">
-      <div class="contact">
-        <div><h2>Let's connect</h2><p>Open to opportunities in Java backend and full-stack engineering.</p></div>
-        <div class="contact-links">
-          <!-- Replace the placeholders below with your preferred contact details. -->
-          <a class="btn primary" href="mailto:vaibhav661998@gmail.com">Email me</a>
-          <a class="btn" href="https://www.linkedin.com/in/vaibhav-kumar-9b9aba185/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://github.com/vaibhav4455" target="_blank" rel="noopener">GitHub</a>
+        <div class="card">
+          <h3>Databases</h3>
+          <p>MySQL, PostgreSQL, MongoDB, SQL, Query Optimization</p>
+        </div>
+
+        <div class="card">
+          <h3>Messaging & Caching</h3>
+          <p>Apache Kafka, Redis, Elasticsearch</p>
+        </div>
+
+        <div class="card">
+          <h3>Cloud & DevOps</h3>
+          <p>AWS, Docker, Kubernetes, Jenkins, CI/CD, Git</p>
+        </div>
+
+        <div class="card">
+          <h3>Security & Testing</h3>
+          <p>OAuth2, SSO, JUnit, Mockito, MockK, Integration Testing</p>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-subtitle">
+        My professional journey and the products I've contributed to.
+      </p>
+
+      <div class="experience-item">
+        <h3>Senior Software Engineer</h3>
+        <div class="company">Personify Health</div>
+        <div class="date">January 2024 – Present | Healthcare & Insurance</div>
+        <ul class="details">
+          <li>Develop full-stack features using Kotlin, Spring Boot,
+              Angular and React.</li>
+          <li>Build and maintain REST APIs for member and admin portals.</li>
+          <li>Contribute to benefits management, COBRA programs and
+              Digital ID Card functionality.</li>
+          <li>Implement enterprise authentication integrations using
+              OAuth2 and SSO, including SP-initiated and IdP-initiated flows.</li>
+          <li>Improve database queries and API performance.</li>
+          <li>Write unit and integration tests using JUnit, Mockito and MockK.</li>
+          <li>Collaborate with cross-functional teams in Agile environments.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Angular</span>
+          <span class="tag">React</span>
+          <span class="tag">OAuth2</span>
+          <span class="tag">Microservices</span>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <h3>Software Engineer</h3>
+        <div class="company">Moglix Labs Pvt. Ltd.</div>
+        <div class="date">September 2021 – January 2024 | E-commerce & Supply Chain</div>
+        <ul class="details">
+          <li>Worked on an Order Management System supporting the
+              end-to-end order lifecycle.</li>
+          <li>Developed REST APIs and backend microservices using
+              Java and Spring Boot.</li>
+          <li>Contributed to order processing, tracking and fulfillment workflows.</li>
+          <li>Worked with MySQL, PostgreSQL and Kafka for data
+              persistence and event-driven communication.</li>
+          <li>Participated in code reviews, sprint planning and
+              continuous delivery.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Kafka</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">
+        Selected projects demonstrating my full-stack and backend
+        development experience.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Inventory Management System</h3>
+          <p>
+            A full-stack application for inventory tracking, product and
+            supplier management, low-stock alerts and reporting.
+            Used efficient data structures and algorithms for
+            searching, sorting and stock operations.
+          </p>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Angular</span>
+            <span class="tag">React</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Real-Time Chat & Notification System</h3>
+          <p>
+            A real-time messaging application supporting one-to-one and
+            group chats, notifications, read receipts and online presence.
+            Redis supports session and presence caching, while Kafka
+            handles notification events.
+          </p>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">WebSocket</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Angular</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="achievements" id="achievements">
+    <div class="container">
+      <h2 class="section-title">Achievements & Education</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Engineering Achievements</h3>
+          <ul class="details">
+            <li>Improved database response time by approximately 30%
+                through query optimization.</li>
+            <li>Delivered enterprise SSO integrations.</li>
+            <li>Contributed to multiple production releases with
+                zero critical defects.</li>
+            <li>Supported code quality through reviews and collaboration.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Education</h3>
+          <p><strong>B.Tech – Computer Science</strong></p>
+          <p>UIET, Kurukshetra University</p>
+          <p>2021 | CGPA: 7.8/10</p>
+        </div>
+
+        <div class="card">
+          <h3>Certifications</h3>
+          <ul class="details">
+            <li>Java Certification – DUCAT, Noida</li>
+            <li>Web Development – Udemy</li>
+            <li>Internship – Cloud Analogy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-subtitle">
+        I'm open to connecting with engineering teams and exploring
+        interesting software development opportunities.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:vaibhav661998@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/vaibhav-kumar-9b9aba185/"
+           target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/vaibhav4455"
+           target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="buttons" style="justify-content:center">
+        <a class="btn btn-primary" href="mailto:vaibhav661998@gmail.com">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="wrap">© <span id="year"></span> Vaibhav Kumar · Built with care.</div></footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<footer>
+  © <span id="year"></span> Vaibhav Kumar. Built with passion for technology.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
